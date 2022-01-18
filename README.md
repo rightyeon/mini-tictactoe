@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# Getting Started with Tic Tac Toe
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### [리액트 공식 문서 가이드 자습서](https://ko.reactjs.org/tutorial/tutorial.html) 읽고 틱택토 만들어보기
+<br>
 
-## Available Scripts
+#### 👉 자습서를 따를 때는 복붙이 아닌 손으로 직접 타이핑해보면서 작성하는 것을 추천한다. 
+<br>
 
-In the project directory, you can run:
+---
+<br>
 
-### `npm start`
+### **1. 초기 환경 설정**
+- 작업할 폴더에 cra 설치<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    ```npx create-react-app workspace```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- index.js와 index.css 초기 코드 작성<br> 
+[초기화 코드](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)
+<br>
+<br>
+```javascript
 
-### `npm test`
+// button을 렌더링
+class Square extends React.Component {
+  render() {
+    return (
+      <button className="square">
+        {/* TODO */}
+      </button>
+    );
+  }
+}
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+// tictactoe 판(보드) 렌더링
+class Board extends React.Component {
+  renderSquare(i) {
+    return <Square />;
+  }
+  render() {
+    const status = 'Next player: X';
+    return (
+      <div>
+        <div className="status">{status}</div>
+        <div className="board-row">
+          {this.renderSquare(0)}
+          {this.renderSquare(1)}
+          {this.renderSquare(2)}
+        </div>
+        <div className="board-row">
+          {this.renderSquare(3)}
+          {this.renderSquare(4)}
+          {this.renderSquare(5)}
+        </div>
+        <div className="board-row">
+          {this.renderSquare(6)}
+          {this.renderSquare(7)}
+          {this.renderSquare(8)}
+        </div>
+      </div>
+    )
+  }
+}
 
-### `npm run build`
+// 게임판을 렌더링하며 나중에 수정할 자리 표시값을 가지고 있음
+class Game extends React.component {
+  render() {
+    return (
+      <div className="game">
+        <div clasName="game-board">
+          <Board/>
+        </div>
+        <div className="game-info">
+        <div>{/* status */}</div>
+        <ol>{/* TODO */}</ol>
+        </div>
+      </div>
+    )
+  }
+}
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ReactDOM.render(
+  <Game />,
+  document.getElementById('root')
+);
+```
+- Square 컴포넌트가 하는 일 : Button을 렌더링
+- Board 컴포넌트가 하는 일 : 사각형 9개(틱택토판) 렌더링
+- Game 컴포넌트가 하는 일 : 게임판을 렌더링하며 나중에 수정할 자리표시값을 가지고 있음
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br>
+초기 코드에는 사용자와 상호작용 하는 컴포넌트가 없다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br><br><br><br>
 
-### `npm run eject`
+### **2. Props를 통해 데이터 전달하기**
+작성중
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
