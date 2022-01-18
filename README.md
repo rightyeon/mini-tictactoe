@@ -1,9 +1,9 @@
-# Getting Started with Tic Tac Toe
+## Getting Started with Tic Tac Toe
 
-### [리액트 공식 문서 가이드 자습서](https://ko.reactjs.org/tutorial/tutorial.html) 읽고 틱택토 만들어보기
+#### [리액트 공식 문서 가이드 자습서](https://ko.reactjs.org/tutorial/tutorial.html) 읽고 틱택토 만들어보기
 <br>
 
-#### 👉 자습서를 따를 때는 복붙이 아닌 손으로 직접 타이핑해보면서 작성하는 것을 추천한다. 
+##### 👉 자습서를 따를 때는 복붙이 아닌 손으로 직접 타이핑해보면서 작성하는 것을 추천한다. 
 <br>
 
 ---
@@ -96,5 +96,5 @@ ReactDOM.render(
 <br><br><br><br>
 
 ### **2. Props를 통해 데이터 전달하기**
-작성중
+과거의 이동 표시하기 진행중
 
