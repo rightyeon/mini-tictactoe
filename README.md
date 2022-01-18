@@ -16,8 +16,10 @@
 
 - index.js와 index.css 초기 코드 작성<br> 
 [초기화 코드](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)
+
 <br>
 <br>
+
 ```javascript
 
 // button을 렌더링
@@ -83,6 +85,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
+
 - Square 컴포넌트가 하는 일 : Button을 렌더링
 - Board 컴포넌트가 하는 일 : 사각형 9개(틱택토판) 렌더링
 - Game 컴포넌트가 하는 일 : 게임판을 렌더링하며 나중에 수정할 자리표시값을 가지고 있음
